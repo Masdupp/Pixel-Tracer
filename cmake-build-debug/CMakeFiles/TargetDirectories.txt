@@ -1,0 +1,3 @@
+C:/Users/Administrateur/OneDrive - Efrei/Bureau/COURS L1/S2/INFORMATIC/ALGORITHMICS AND DATA STRUCTURE/Cproject/cmake-build-debug/CMakeFiles/Cproject.dir
+C:/Users/Administrateur/OneDrive - Efrei/Bureau/COURS L1/S2/INFORMATIC/ALGORITHMICS AND DATA STRUCTURE/Cproject/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Administrateur/OneDrive - Efrei/Bureau/COURS L1/S2/INFORMATIC/ALGORITHMICS AND DATA STRUCTURE/Cproject/cmake-build-debug/CMakeFiles/rebuild_cache.dir
