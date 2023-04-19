@@ -60,7 +60,8 @@
 				4,
 				6,
 				8,
-				10
+				10,
+				11
 			]
 		}
 	],
@@ -102,7 +103,8 @@
 				4,
 				6,
 				8,
-				10
+				10,
+				11
 			]
 		},
 		{
@@ -178,6 +180,12 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "rectangle.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "circle.c",
 			"sourceGroupIndex" : 0
 		}
 	],
