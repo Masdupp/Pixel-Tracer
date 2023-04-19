@@ -73,6 +73,18 @@ build CMakeFiles/Cproject.dir/line.c.obj: C_COMPILER__Cproject_Debug C$:/Users/A
   OBJECT_DIR = CMakeFiles\Cproject.dir
   OBJECT_FILE_DIR = CMakeFiles\Cproject.dir
 
+build CMakeFiles/Cproject.dir/square.c.obj: C_COMPILER__Cproject_Debug C$:/Users/Administrateur/OneDrive$ -$ Efrei/Bureau/COURS$ L1/S2/INFORMATIC/ALGORITHMICS$ AND$ DATA$ STRUCTURE/Cproject/square.c || cmake_object_order_depends_target_Cproject
+  DEP_FILE = CMakeFiles\Cproject.dir\square.c.obj.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu11
+  OBJECT_DIR = CMakeFiles\Cproject.dir
+  OBJECT_FILE_DIR = CMakeFiles\Cproject.dir
+
+build CMakeFiles/Cproject.dir/rectangle.c.obj: C_COMPILER__Cproject_Debug C$:/Users/Administrateur/OneDrive$ -$ Efrei/Bureau/COURS$ L1/S2/INFORMATIC/ALGORITHMICS$ AND$ DATA$ STRUCTURE/Cproject/rectangle.c || cmake_object_order_depends_target_Cproject
+  DEP_FILE = CMakeFiles\Cproject.dir\rectangle.c.obj.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu11
+  OBJECT_DIR = CMakeFiles\Cproject.dir
+  OBJECT_FILE_DIR = CMakeFiles\Cproject.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Cproject
@@ -81,7 +93,7 @@ build CMakeFiles/Cproject.dir/line.c.obj: C_COMPILER__Cproject_Debug C$:/Users/A
 #############################################
 # Link the executable Cproject.exe
 
-build Cproject.exe: C_EXECUTABLE_LINKER__Cproject_Debug CMakeFiles/Cproject.dir/main.c.obj CMakeFiles/Cproject.dir/shapes.c.obj CMakeFiles/Cproject.dir/point.c.obj CMakeFiles/Cproject.dir/line.c.obj
+build Cproject.exe: C_EXECUTABLE_LINKER__Cproject_Debug CMakeFiles/Cproject.dir/main.c.obj CMakeFiles/Cproject.dir/shapes.c.obj CMakeFiles/Cproject.dir/point.c.obj CMakeFiles/Cproject.dir/line.c.obj CMakeFiles/Cproject.dir/square.c.obj CMakeFiles/Cproject.dir/rectangle.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Cproject.dir
