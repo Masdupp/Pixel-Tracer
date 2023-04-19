@@ -4,7 +4,7 @@
 
 typedef struct {
     Point *corner;
-    int length;
+    int length
     int width;
 }Rectangle;
 

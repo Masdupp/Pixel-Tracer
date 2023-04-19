@@ -12,5 +12,5 @@ void delete_circle(Circle * circle){
     free(circle);
 }
 void print_circle(Circle * circle){
-    
+    printf("CIRCLE: %d %d %d", circle->point->pos_x, circle->point->pos_y, circle->radius);
 }
