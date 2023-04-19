@@ -1,3 +1,7 @@
 # ninja log v5
-1	150	7036133478861560	CMakeFiles/Cproject.dir/main.c.obj	8e124518cd251250
-152	337	7036133480643271	Cproject.exe	b2f6b7470ce94a5a
+4	101	7036145401200894	CMakeFiles/Cproject.dir/main.c.obj	8e124518cd251250
+102	231	7036145402401469	Cproject.exe	b2f6b7470ce94a5a
+19	124	7036179663144105	CMakeFiles/Cproject.dir/shapes.c.obj	efb65a6a56da77dd
+3	127	7036179663164120	CMakeFiles/Cproject.dir/main.c.obj	8e124518cd251250
+10	137	7036179663294136	CMakeFiles/Cproject.dir/point.c.obj	8f491f4d0cdb069c
+137	282	7036179664656346	Cproject.exe	938c989aefc6c411

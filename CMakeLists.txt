@@ -4,4 +4,4 @@ project(Cproject C)
 set(CMAKE_C_STANDARD 11)
 
 add_executable(Cproject
-        main.c)
+        main.c shapes.h shapes.c point.h point.c)
