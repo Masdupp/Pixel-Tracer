@@ -1,4 +1,3 @@
-
 #ifndef CPROJECT_SQUARE_H
 #define CPROJECT_SQUARE_H
 #include "point.h"

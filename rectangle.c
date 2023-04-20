@@ -6,7 +6,7 @@ Rectangle *create_rectangle(Point * point, int width, int height){
     rectangle->corner = point;
     rectangle->width = width;
     rectangle->length = height;
-    return rectangle
+    return rectangle;
 
 }
 void delete_rectangle(Rectangle * rectangle){

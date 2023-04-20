@@ -1,4 +1,5 @@
 #include "polygon.h"
+#include "point.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -7,7 +8,7 @@ Polygon *create_polygon(int n){
     polygon->n=n;
     polygon->points = (Point**)malloc(n * sizeof(Point*));
     for(int i=0; i<n; i++){
-        polygon->points[i] = create_point();
+        polygon->points[i] = create_point(i, n);
 
     }
     return polygon;

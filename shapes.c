@@ -30,7 +30,7 @@ Shape *create_line_shape(int px1, int py1, int px2, int py2){
     Point *p2 = create_point(px2, py2);
     Line *line = create_line(p1, p2);
     shp ->ptrShape = line;
-    return shp
+    return shp;
 }
 
 Shape *create_square_shape(int px, int py, int length){
@@ -38,7 +38,7 @@ Shape *create_square_shape(int px, int py, int length){
     Point *p = create_point(px,py);
     Square *square = create_square(p, length);
     shp-> ptrShape = square;
-    return shp
+    return shp;
 }
 
 Shape *create_rectangle_shape(int px, int py, int width, int height){
@@ -76,6 +76,5 @@ void delete_shape(Shape * shape){
     }
     }
 void print_shape(Shape * shape){
-    printf("%c,%d %d %d %d",&shape)
 
 }
