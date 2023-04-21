@@ -76,5 +76,22 @@ void delete_shape(Shape * shape){
     }
     }
 void print_shape(Shape * shape){
-
+    if (shape->ptrShape= POINT) {
+        print_point(shape->ptrShape);
+    }
+    else if(shape->ptrShape = LINE){
+        print_line(shape->ptrShape);
+    }
+    else if(shape->ptrShape = SQUARE){
+        print_square(shape->ptrShape);
+    }
+    else if(shape->ptrShape= CIRCLE){
+        print_circle(shape->ptrShape);
+    }
+    else if(shape->ptrShape = RECTANGLE){
+        print_rectangle(shape->ptrShape);
+    }
+    else if(shape->ptrShape =POLYGON){
+        print_polygon(shape->ptrShape);
+    }
 }

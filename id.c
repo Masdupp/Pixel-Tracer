@@ -1,6 +1,6 @@
 #include "id.h"
 
-unsigned int global_id = 0;
-unsigned int get_next_id(global_id){
-
-}
+unsigned int get_next_id(id){
+    int tmp;
+    tmp = get_next_id(id-1)+1;
+    }
