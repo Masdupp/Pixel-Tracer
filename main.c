@@ -1,10 +1,13 @@
 #include <stdio.h>
 #include "shapes.h"
+#include <stdbool.h>
+
 int main () {
-    while (1) {
+    char decision;
+    int action;
+    bool cond = true;
 
-
-        char c;
+    while (cond == true) {
         printf("Please select one action:\n");
         printf("    A- Add a shape\n");
         printf("    B- Display the list of shapes\n");
@@ -12,9 +15,11 @@ int main () {
         printf("    D- Drawing the shapes\n");
         printf("    E- Help\n");
         printf("    [Other actions]\n");
+        printf("----------Your action----------\n");
 
-        scanf("%c", &c);
-        while ((c > 70) || (c < 65)) {
+        scanf(" %c", &decision); // add a space before %c to skip leading whitespace
+
+        while ((decision > 70) || (decision < 65)) {
             printf("Please select one action:\n");
             printf("    A- Add a shape\n");
             printf("    B- Display the list of shapes\n");
@@ -22,9 +27,13 @@ int main () {
             printf("    D- Drawing the shapes\n");
             printf("    E- Help\n");
             printf("    [Other actions]\n");
-            scanf("%c", &c);
+            printf("----------Your action----------\n");
+
+            scanf(" %c", &decision); // add a space before %c to skip leading whitespace
         }
-        if (c == 65) {
+
+        if (decision == 'A') {
+            int px, py, x1, y1, x2, y2, width, radius, length;
             printf("Your choice : A\n"
                    "Please select an action:\n"
                    "1- Add a point\n"
@@ -33,23 +42,12 @@ int main () {
                    "4- Add a square\n"
                    "5- Add a rectangle\n"
                    "6- Add a polygon\n"
-                   "7- Return to previous menu \n");
-        }
-        if (c==66){
+                   "7- Return to previous menu \n"
+                   "----------Your action----------\n");
 
-        }
-        if (c==67){
+            scanf("%d", &action);
 
-        }
-        if (c==68){
-
-        }
-        if (c==69){
-
-        }
-            int d;
-            scanf("%d", &d);
-            while ((d < 0) || (d > 7)) {
+            while ((action < 1) || (action > 7)) {
                 printf("Your choice : A\n"
                        "Please select an action:\n"
                        "1- Add a point\n"
@@ -58,39 +56,56 @@ int main () {
                        "4- Add a square\n"
                        "5- Add a rectangle\n"
                        "6- Add a polygon\n"
-                       "7- Return to previous menu\n");
+                       "7- Return to previous menu \n"
+                       "----------Your action----------\n");
+
+                scanf("%d", &action);
             }
-            int px, py, x1, x2, y1, y2, length, width, radius;
-            if (d == 1) {
-                printf("Your choice : 1\n"
-                       "Enter the coordinates of the point px py:");
+
+            if (action == 1) {
+                printf("Your choice: 1\nEnter the coordinates of the point (px, py): ");
+                scanf("%d %d", &px, &py);
+                Shape *shape = create_point_shape(px, py);
+                printf("Your point has been created!\n");
             }
-            if (d == 2) {
-                printf("Your choice : 2\n"
-                       "Enter the information of the line:\n"
-                       "Enter the first point x1 y1:");
-                scanf("%d %d", &x1, &y1);
-                printf("Enter the second point x2 y2:");
-                scanf("%d %d", &x2, &y2);
-                create_line_shape(x1, y1, x2, y2);
+
+            if(action==2){
+            printf("Your choice : 2\n"
+                   "Enter the information of the line:\n"
+                   "Enter the first point x1 y1: ");
+            scanf("%d %d", &x1, &y1);
+            printf("Enter the second point x2 y2: ");
+            scanf("%d %d", &x2, &y2);
+            create_line_shape(x1, y1, x2, y2);
+            printf("Your line has been created !\n");
             }
-            if (d == 3) {
-                printf("Enter the circle information:\n"
-                       "Enter the center point x1 y1:");
-                scanf("%d %d",&x1,&y1);
-                printf("Enter the radius of the circle:");
-                scanf("%d", radius);
-                create_circle_shape(x1, y1, radius);
-            }
-            if (d == 4) {
+            if(action==3){
+                printf("Your choice : 3\n"
+                        "Enter the information of the circle px py and radius :\n"
+                        "Enter the coordinates of the center px py: ");
+                scanf("%d %d", &px, &py);
+                printf("Enter the length of the radius :");
+                scanf("%d", &radius);
+                create_circle_shape(px, py, radius);
+                printf("Your circle has been created !\n");
 
             }
-            if (d == 5) {
+            }
+
+
+            if (decision==66){
 
             }
-            if (d == 6) {
+            if (decision==67){
 
             }
+            if (decision==68){
+
+            }
+            if (decision==69){
+
+            }
+
 
 }
     return 0;
