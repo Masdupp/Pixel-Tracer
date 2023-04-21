@@ -88,9 +88,17 @@ int main () {
                 scanf("%d", &radius);
                 create_circle_shape(px, py, radius);
                 printf("Your circle has been created !\n");
+            }
+            if(action==4){
 
             }
+            if(action==5){
+
             }
+            if(action==6){
+
+            }
+                        }
 
 
             if (decision==66){
