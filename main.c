@@ -101,9 +101,31 @@ int main () {
                         }
 
 
-            if (decision==66){
+        if (decision=='B'){
+            printf("Your choice : B\n"
+                   "List of shapes :\n"
+                   "1 : CIRCLE 20 10 5\n"
+                   "2 : CIRCLE 20 25 5\n"
+                   "3 : LINE 5 20 10 25\n"
+                   "4 : POLYGON 15 0 5 10 10 15 5 20 10 25 5 30 15 35\n"
+                   "5 : CURVE 35 5 25 5 40 30 30 30\n"
+                   "----------Your action----------\n");
 
+            scanf("%d", &action);
+            while((action<1)||(action>5)){
+                printf("Your choice : B\n"
+                       "List of shapes :\n"
+                       "1 : CIRCLE 20 10 5\n"
+                       "2 : CIRCLE 20 25 5\n"
+                       "3 : LINE 5 20 10 25\n"
+                       "4 : POLYGON 15 0 5 10 10 15 5 20 10 25 5 30 15 35\n"
+                       "5 : CURVE 35 5 25 5 40 30 30 30\n"
+                       "----------Your action----------\n");
+                scanf("%d", &action);
             }
+        }
+
+
             if (decision==67){
 
             }
