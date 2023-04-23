@@ -1,11 +1,18 @@
 #include <stdio.h>
 #include "shapes.h"
 #include <stdbool.h>
+#include <stdlib.h>
 
+void clearscreen(){
+    system("clear");
+    system("cls");
+}
 int main () {
     char decision;
     int action;
     bool cond = true;
+    int LS = 0;
+    
 
     while (cond == true) {
         printf("Please select one action:\n");
@@ -17,7 +24,7 @@ int main () {
         printf("    [Other actions]\n");
         printf("----------Your action----------\n");
 
-        scanf(" %c", &decision); // add a space before %c to skip leading whitespace
+        scanf(" %c", &decision);
 
         while ((decision > 70) || (decision < 65)) {
             printf("Please select one action:\n");
@@ -29,7 +36,7 @@ int main () {
             printf("    [Other actions]\n");
             printf("----------Your action----------\n");
 
-            scanf(" %c", &decision); // add a space before %c to skip leading whitespace
+            scanf(" %c", &decision);
         }
 
         if (decision == 'A') {
