@@ -12,7 +12,7 @@ int main () {
     int action;
     bool cond = true;
     int LS = 0;
-    
+
 
     while (cond == true) {
         printf("Please select one action:\n");

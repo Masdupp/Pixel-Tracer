@@ -22,6 +22,7 @@ Shape *create_point_shape(int px, int py)
     Shape *shp = create_empty_shape(POINT);
     Point *p = create_point(px, py);
     shp->ptrShape = p;
+    shp->id = get_next_id();
     return shp;
 }
 
@@ -31,6 +32,7 @@ Shape *create_line_shape(int px1, int py1, int px2, int py2){
     Point *p2 = create_point(px2, py2);
     Line *line = create_line(p1, p2);
     shp ->ptrShape = line;
+    shp->id = get_next_id();
     return shp;
 }
 
@@ -39,6 +41,7 @@ Shape *create_square_shape(int px, int py, int length){
     Point *p = create_point(px,py);
     Square *square = create_square(p, length);
     shp-> ptrShape = square;
+    shp->id = get_next_id();
     return shp;
 }
 
@@ -47,6 +50,7 @@ Shape *create_rectangle_shape(int px, int py, int width, int height){
     Point *p = create_point(px, py);
     Rectangle *rectangle = create_rectangle(p, width, height);
     shp->ptrShape = rectangle;
+    shp->id = get_next_id();
     return shp;
 }
 
@@ -55,6 +59,7 @@ Shape *create_circle_shape(int px, int py, int radius){
     Point *p = create_point(px, py);
     Circle *circle = create_circle(p, radius);
     shp-> ptrShape = circle;
+    shp->id = get_next_id();
     return shp;
 }
 
@@ -66,6 +71,7 @@ Shape *create_polygon_shape(int lst[], int n){
     Shape *shp = create_empty_shape(POLYGON);
     Polygon *polygon = create_polygon(n);
     shp-> ptrShape = polygon;
+    shp->id = get_next_id();
     return shp;
 }
 void delete_shape(Shape * shape){
