@@ -2,6 +2,7 @@
 #include "stdlib.h"
 #include "point.h"
 #include "stdio.h"
+#include "pixel.h"
 
 Area* create_area(unsigned int width, unsigned int height){
     Area *a1 = (Area*)malloc(sizeof(Area));

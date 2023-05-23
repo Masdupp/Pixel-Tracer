@@ -1,11 +1,15 @@
 # ninja log v5
-7	240	7039678227296560	CMakeFiles/Cproject.dir/main.c.obj	8e124518cd251250
-269	496	7039678229831330	Cproject.exe	a1d534156885ff8a
-20	268	7039678227593337	CMakeFiles/Cproject.dir/shapes.c.obj	efb65a6a56da77dd
+4	145	7065522160040464	CMakeFiles/Cproject.dir/main.c.obj	8e124518cd251250
+213	494	7065629236821809	Cproject.exe	263c5844254c3d5b
+4	126	7065628307770035	CMakeFiles/Cproject.dir/shapes.c.obj	efb65a6a56da77dd
 4	124	7036974292657669	CMakeFiles/Cproject.dir/rectangle.c.obj	a8da1b18b249895d
 10	137	7036179663294136	CMakeFiles/Cproject.dir/point.c.obj	8f491f4d0cdb069c
 26	239	7036973281953904	CMakeFiles/Cproject.dir/circle.c.obj	e87f4198325e6984
-9	110	7037075091160697	CMakeFiles/Cproject.dir/line.c.obj	f492aaea87e20965
+14	146	7065627855716205	CMakeFiles/Cproject.dir/line.c.obj	f492aaea87e20965
 8	102	7037090916275243	CMakeFiles/Cproject.dir/square.c.obj	1e25d229f3ddde06
 3	112	7036975009483633	CMakeFiles/Cproject.dir/polygon.c.obj	123c270af17e65d8
 20	118	7037749856876082	CMakeFiles/Cproject.dir/id.c.obj	3b34fbf98d44701
+6	179	7065629233736009	CMakeFiles/Cproject.dir/area.c.obj	50a1118d063bc420
+16	212	7065629234067542	CMakeFiles/Cproject.dir/pixel.c.obj	4b1c183bbe20e18d
+4	130	7065633263911846	CMakeFiles/Cproject.dir/commands.c.obj	d6171d6b89f97234
+132	291	7065633265433253	Cproject.exe	1d9df7f3c308edd0

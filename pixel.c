@@ -59,12 +59,12 @@ void pixel_line(Line* line, Pixel*** pixel, int* nb_pixels){
         dy = y1 - y2;
     }
 
-    int dmin = min(dx, abs(dy));
-    int dmax = max(dx, abs(dy));
+    int d_min = min(dx, abs(dy));
+    int d_max = max(dx, abs(dy));
 
-    int nb_segs = dmin + 1;
+    int nb_segs = d_min + 1;
 
-    int taille_de_base = (dmax + 1)/(dmin +1 );
+    int taille_de_base = (d_max + 1)/(d_min +1 );
 
     int segments[nb_segs];
 
@@ -72,7 +72,7 @@ void pixel_line(Line* line, Pixel*** pixel, int* nb_pixels){
         segments[i] = taille_de_base;
     }
 
-    int restants = (dmax + 1) % (dmin +1);
+    int restants = (d_max + 1) % (d_min +1);
 
     int nombre_total_pixel = nb_segs * taille_de_base + restants;
 
@@ -84,7 +84,7 @@ void pixel_line(Line* line, Pixel*** pixel, int* nb_pixels){
 
     cumuls[0]=0;
     for (int i = 1; i < nb_segs ; i++){
-        cumuls[i] = ((i+1)*restants)%(dmin+1) < ((i*restants)%(dmin+1));
+        cumuls[i] = ((i+1)*restants)%(d_min+1) < ((i*restants)%(d_min+1));
         segments[i] = segments[i] + cumuls[i];
     }
 
@@ -157,9 +157,9 @@ void pixel_line(Line* line, Pixel*** pixel, int* nb_pixels){
 }
 
 void pixel_square(Square* square, Pixel*** pixel_tab, int* nb_pixels) {
-    int px = square->p1->pos_x;
-    int py = square->p1->pos_y;
-    int n = square->n;
+    int px = square->corner->pos_x;
+    int py = square->corner->pos_y;
+    int n = square->length;
 
     int tempo_nb_pixels;
 
@@ -215,12 +215,89 @@ void pixel_square(Square* square, Pixel*** pixel_tab, int* nb_pixels) {
 
     free(pixels_bis);
 
+    /*
     printf("--------------------------------------------------------\n");
     for (int i = 0; i < *nb_pixels; i++) {
         printf(" %d %d \n", (*pixel_tab)[i]->px, (*pixel_tab)[i]->py);
     }
+    */
 }
 
+void pixel_rectangle(Rectangle* rectangle, Pixel*** pixel_tab, int* nb_pixels){
+    int px = rectangle->corner->pos_x;
+    int py = rectangle->corner->pos_y;
+    int width = rectangle->width;
+    int length = rectangle->length;
+
+    int tempo_nb_pixels;
+
+    *pixel_tab = (Pixel **)malloc(sizeof(Pixel *) * (width + 1) * (length + 1));
+
+    Pixel **pixels_bis = NULL;
+    pixels_bis = (Pixel **) malloc(sizeof(Pixel *) * (width + 1) * (length + 1));
+
+    Line* l1 = create_line(px, py, px, py + width);
+    pixel_line(l1, &pixels_bis, nb_pixels);
+
+    int last_nb_pixels = 0;
+    tempo_nb_pixels = *nb_pixels;
+    printf("tmp nb pixels : %d\n", tempo_nb_pixels);
+
+    for (int i = 0; i < *nb_pixels; i++) {
+        (*pixel_tab)[i] = pixels_bis[i];
+        printf(" 1 pixel : %d %d\n", (*pixel_tab)[i]->px, (*pixel_tab)[i]->py);
+    }
+
+    delete_line(l1);
+
+    last_nb_pixels = *nb_pixels;
+
+    Line* l2 = create_line(px, py + width, px + length, py + width);
+    pixel_line(l2, &pixels_bis, nb_pixels);
+
+    printf("last : %d new : %d\n", last_nb_pixels, *nb_pixels);
+
+    for (int i = last_nb_pixels; i < *nb_pixels + last_nb_pixels; i++) {
+        (*pixel_tab)[i] = pixels_bis[i - last_nb_pixels];
+        printf(" 2 pixel : %d %d\n", (*pixel_tab)[i]->px, (*pixel_tab)[i]->py);
+    }
+
+    delete_line(l2);
+
+    last_nb_pixels = *nb_pixels + last_nb_pixels;
+
+    Line* l3 = create_line(px + length, py, px + length, py + width);
+    pixel_line(l3, &pixels_bis, nb_pixels);
+
+    printf("last : %d new : %d\n", last_nb_pixels, *nb_pixels + last_nb_pixels);
+
+    for (int i = last_nb_pixels; i < *nb_pixels + last_nb_pixels; i++) {
+        (*pixel_tab)[i] = pixels_bis[i - 2 * last_nb_pixels];
+        printf(" 3 pixel : %d %d\n", (*pixel_tab)[i]->px, (*pixel_tab)[i]->py);
+    }
+
+    tempo_nb_pixels += *nb_pixels;
+
+    delete_line(l3);
+
+    last_nb_pixels = *nb_pixels;
+
+    Line* l4 = create_line(px, py, px + length, py);
+    pixel_line(l4, &pixels_bis, nb_pixels);
+
+    tempo_nb_pixels += *nb_pixels;
+
+    for (int i = last_nb_pixels; i < *nb_pixels; i++){
+        (*pixel_tab)[i] = pixels_bis[i - 3 * last_nb_pixels];
+        printf(" 4 pixel : %d %d\n", (*pixel_tab)[i]->px, (*pixel_tab)[i]->py);
+    }
+
+    delete_line(l4);
+
+    *nb_pixels = tempo_nb_pixels;
+
+    free(pixels_bis);
+}
 
 
 Pixel** create_shape_to_pixel(Shape* shape, int* nb_pixels){
@@ -243,4 +320,17 @@ Pixel** create_shape_to_pixel(Shape* shape, int* nb_pixels){
 
 void delete_pixel_shape(Pixel** pixel, int nb_pixels){
     free(pixel);
+}
+
+
+void pixel_polygon(Polygon * polygon, Pixel** Arr_pixel, int* nb_pixels){
+    int nb_point = polygon->n;
+    for(int i = 0; i<nb_point-1; i++){
+        Line *line = (Line*) malloc(sizeof(Line));
+        line->p1 = (Point*) malloc(sizeof(Point));
+        *line->p1 = (Point){polygon->points[i]->pos_x, polygon->points[i]->pos_y};
+        line->p2 = (Point*) malloc(sizeof(Point));
+        *line->p2 = (Point){polygon->points[i+1]->pos_x, polygon->points[i+1]->pos_y};
+        pixel_line(line, Arr_pixel, nb_pixels);
+    }
 }

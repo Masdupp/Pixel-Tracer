@@ -30,7 +30,7 @@ Shape *create_line_shape(int px1, int py1, int px2, int py2){
     Shape *shp = create_empty_shape(LINE);
     Point *p1 = create_point(px1, py1);
     Point *p2 = create_point(px2, py2);
-    Line *line = create_line(p1, p2);
+    Line *line = create_line(px1,py1, px2, py2);
     shp ->ptrShape = line;
     shp->id = get_next_id();
     return shp;
