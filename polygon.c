@@ -4,26 +4,28 @@
 #include <stdlib.h>
 
 Polygon *create_polygon(int n){
-    Polygon *polygon = (Polygon*) malloc(sizeof(Polygon));
-    polygon->n=n;
-    polygon->points = (Point**)malloc(n * sizeof(Point*));
-    for(int i=0; i<n; i++){
-        polygon->points[i] = create_point(i, n);
-
+    Polygon *p1 = (Polygon *) malloc(sizeof(Polygon));
+    p1->points = (Point**)malloc(sizeof (Point)*n);
+    p1->n = n;
+    int i=0;
+    int x,y;
+    while (i<n){
+        printf("Enter your point coordinates: x y \n");
+        scanf("%d %d",&x,&y);
+        p1->points[i] = create_point(x, y);
+        i++;
     }
-    return polygon;
+    return p1;
 }
+
 void delete_polygon(Polygon * polygon){
-    for(int i=0; i< polygon->n; i++){
-        delete_point(polygon->points[i]);
-    }
-    free(polygon->points);
     free(polygon);
 }
+
 void print_polygon(Polygon * polygon){
-    printf("Polygon with %d points:\n", polygon->n);
-    for(int i=0; i< polygon->n; i++){
-        printf("Point %d: ", i+1);
+    printf("POLYGON : %d points \n", polygon->n);
+    int i;
+    for (i = 0; i < polygon->n; i++){
         print_point(polygon->points[i]);
     }
 }

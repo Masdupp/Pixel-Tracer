@@ -1,5 +1,5 @@
-#ifndef PIXEL_TRACER_PIXEL_H
-#define PIXEL_TRACER_PIXEL_H
+#ifndef CPROJECT_PIXEL_H
+#define CPROJECT_PIXEL_H
 #include "point.h"
 #include "shapes.h"
 #include "square.h"
@@ -23,6 +23,6 @@ void pixel_square(Square* square, Pixel*** pixel_tab, int* nb_pixels);
 Pixel** create_shape_to_pixel(Shape * shape, int* nb_pixels);
 void delete_pixel_shape(Pixel** pixel, int nb_pixels);
 void pixel_rectangle(Rectangle* rectangle, Pixel*** pixel_tab, int* nb_pixels);
-void pixel_polygon(Polygon* polygon, Pixel** pixel, int* nb_pixels);
+void pixel_polygon(Polygon* polygon, Pixel*** pixel_tab, int* nb_pixels);
 
-#endif //C_PROJECT_PIXEL_H
+#endif //CPROJECT_PIXEL_H

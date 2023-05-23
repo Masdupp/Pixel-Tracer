@@ -35,6 +35,7 @@ void free_cmd(Command* cmd) {
 }
 
 int read_exec_command(Command* cmd) {
+    // Your code to execute the command goes here
     printf("Executing command: %s\n", cmd->name);
     for (int i = 0; i < cmd->int_size; i++) {
         printf("Int Param: %d\n", cmd->int_params[i]);
@@ -49,7 +50,7 @@ void read_from_stdin(Command* cmd) {
     char line[100];
     printf("Enter a command: ");
     fgets(line, sizeof(line), stdin);
-    line[strcspn(line, "\n")] = '\0';
+    line[strcspn(line, "\n")] = '\0'; // Remove the newline character
     char* token = strtok(line, " ");
     while (token != NULL) {
         if (isdigit(token[0])) {

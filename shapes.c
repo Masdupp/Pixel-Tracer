@@ -63,17 +63,13 @@ Shape *create_circle_shape(int px, int py, int radius){
     return shp;
 }
 
-Shape *create_polygon_shape(int lst[], int n){
-    if(n%2 !=0){
-        printf("Error : Number of points must be even\n");
-        return NULL;
-    }
+Shape *create_polygon_shape(int n){
     Shape *shp = create_empty_shape(POLYGON);
-    Polygon *polygon = create_polygon(n);
-    shp-> ptrShape = polygon;
-    shp->id = get_next_id();
+    Polygon *poly = create_polygon(n);
+    shp->ptrShape = poly;
     return shp;
 }
+
 void delete_shape(Shape * shape){
     if(shape){
         if(shape->ptrShape){
