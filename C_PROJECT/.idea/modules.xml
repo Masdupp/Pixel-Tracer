@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Pixel-Tracer-main.iml" filepath="$PROJECT_DIR$/.idea/Pixel-Tracer-main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Cproject.iml" filepath="$PROJECT_DIR$/.idea/Cproject.iml" />
     </modules>
   </component>
 </project>

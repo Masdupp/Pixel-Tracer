@@ -95,7 +95,7 @@ int main() {
 
             } else if ((action) == '3') {
                 int x1, y1, radius;
-                printf("Enter the coordinates of the center of your circle and the radius : x1 y1 radius\n");
+                printf("Enter the coordiantes of the center of your circle and the radius : x1 y1 radius\n");
                 scanf("%d %d %d", &x1, &y1, &radius);
                 Shape *s1 = create_circle_shape(x1, y1, radius);
                 add_shape_to_area(a1, s1);
@@ -116,7 +116,7 @@ int main() {
 
             } else if ((action) == '5') {
                 int x1, y1, width, height;
-                printf("Enter the coordinates of the left corner of your rectangle and the width / heigth : x1 y1 width height\n");
+                printf("Enter the coordinates of the left corner of your rectangle and the width / heigth : x1 y1 width height :\n");
                 scanf("%d %d %d %d", &x1, &y1, &width, &height);
                 Shape *s1 = create_rectangle_shape(x1, y1, width, height);
                 add_shape_to_area(a1, s1);
@@ -127,7 +127,7 @@ int main() {
 
             } else if ((action) == '6') {
                 int n;
-                printf("Enter the number of points in your polygon (must be an even number)\n");
+                printf("Enter the number of points in your polygon :\n");
                 scanf("%d", &n);
                 Shape *s1 = create_polygon_shape(n);
                 add_shape_to_area(a1, s1);
@@ -140,7 +140,7 @@ int main() {
             }
 
         } else if ((direction == 'B') || (direction == 'b')) {
-            print_shape(a1);
+            display_shapes(a1);
         } else if ((direction == 'C') || (direction == 'c')) {
             int answer=0;
             printf("Which shapes do you want to delete ? (Enter the ID)):\n");
