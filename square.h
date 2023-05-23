@@ -11,3 +11,4 @@ void delete_square(Square * square);
 void print_square(Square * square);
 
 #endif //CPROJECT_SQUARE_H
+ 
