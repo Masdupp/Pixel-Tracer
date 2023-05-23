@@ -3,11 +3,11 @@
 #include "point.h"
 #include "shapes.h"
 
-struct pixel {
+typedef struct pixel {
     int px;
     int py;
-};
-typedef struct pixel Pixel;
+}Pixel;
+
 Pixel* create_pixel(int px, int py);
 void delete_pixel(Pixel* pixel);
 int min(int v1,int v2);

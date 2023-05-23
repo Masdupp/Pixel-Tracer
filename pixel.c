@@ -2,6 +2,10 @@
 #include "pixel.h"
 #include "stdlib.h"
 #include "stdio.h"
+#include "shapes.h"
+#include "line.h"
+#include "point.h"
+#include "square.h"
 
 Pixel* create_pixel(int px, int py){
     Pixel *p1 = (Pixel*)malloc(sizeof (Pixel));
